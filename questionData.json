@@ -1,0 +1,185 @@
+{
+    "const": "questionData",
+    "data": [
+        {
+            "questionIntro": "Maviş ve Yumak isimli kedi dostlarımız, evin etrafında sürekli birlikte dolaşıyorlar.",
+            "questionText": "Yukarıda bahsedilen kedilerin davranışı aşağıdakilerden hangisine örnektir?",
+            "options": [
+                "B) Sosyal canlı olma",
+                "E) Uysal olma",
+                "D) Agresif olma",
+                "A) Bağımsız hareket etme",
+                "C) Yalnız yaşama"
+            ],
+            "answer": "B"
+        },
+        {
+            "questionIntro": "Tarihi bir romanda, kralın savaş alanında yaralandığı anlatılıyor.",
+            "questionText": "Bu tür bir anlatım aşağıdaki edebi türlerden hangisine bir örnektir?",
+            "options": [
+                "D) Deneme",
+                "C) Roman",
+                "E) Biyografi",
+                "B) Öykü",
+                "A) Lirik şiir"
+            ],
+            "answer": "C"
+        },
+        {
+            "questionIntro": "Bilim insanları, uzayda yeni bir gezegen keşfetti.",
+            "questionText": "Bu keşif ile ilgili olarak aşağıdakilerden hangisi söylenebilir?",
+            "options": [
+                "A) Astroloji ile ilgilidir",
+                "C) Ekoloji ile ilgilidir",
+                "E) Biyoloji ile ilgilidir",
+                "B) Astronomi ile ilgilidir",
+                "D) Jeoloji ile ilgilidir"
+            ],
+            "answer": "B"
+        },
+        {
+            "questionIntro": "Maviş ve Yumak isimli kedi dostlarımız, evin etrafında sürekli birlikte dolaşıyorlar.",
+            "questionText": "Yukarıda bahsedilen kedilerin davranışı aşağıdakilerden hangisine örnektir?",
+            "options": [
+                "B) Sosyal canlı olma",
+                "E) Uysal olma",
+                "D) Agresif olma",
+                "A) Bağımsız hareket etme",
+                "C) Yalnız yaşama"
+            ],
+            "answer": "B"
+        },
+        {
+            "questionIntro": "Tarihi bir romanda, kralın savaş alanında yaralandığı anlatılıyor.",
+            "questionText": "Bu tür bir anlatım aşağıdaki edebi türlerden hangisine bir örnektir?",
+            "options": [
+                "D) Deneme",
+                "C) Roman",
+                "E) Biyografi",
+                "B) Öykü",
+                "A) Lirik şiir"
+            ],
+            "answer": "C"
+        },
+        {
+            "questionIntro": "Bilim insanları, uzayda yeni bir gezegen keşfetti.",
+            "questionText": "Bu keşif ile ilgili olarak aşağıdakilerden hangisi söylenebilir?",
+            "options": [
+                "A) Astroloji ile ilgilidir",
+                "C) Ekoloji ile ilgilidir",
+                "E) Biyoloji ile ilgilidir",
+                "B) Astronomi ile ilgilidir",
+                "D) Jeoloji ile ilgilidir"
+            ],
+            "answer": "B"
+        },
+        {
+            "questionIntro": "Maviş ve Yumak isimli kedi dostlarımız, evin etrafında sürekli birlikte dolaşıyorlar.",
+            "questionText": "Yukarıda bahsedilen kedilerin davranışı aşağıdakilerden hangisine örnektir?",
+            "options": [
+                "B) Sosyal canlı olma",
+                "E) Uysal olma",
+                "D) Agresif olma",
+                "A) Bağımsız hareket etme",
+                "C) Yalnız yaşama"
+            ],
+            "answer": "B"
+        },
+        {
+            "questionIntro": "Tarihi bir romanda, kralın savaş alanında yaralandığı anlatılıyor.",
+            "questionText": "Bu tür bir anlatım aşağıdaki edebi türlerden hangisine bir örnektir?",
+            "options": [
+                "D) Deneme",
+                "C) Roman",
+                "E) Biyografi",
+                "B) Öykü",
+                "A) Lirik şiir"
+            ],
+            "answer": "C"
+        },
+        {
+            "questionIntro": "Bilim insanları, uzayda yeni bir gezegen keşfetti.",
+            "questionText": "Bu keşif ile ilgili olarak aşağıdakilerden hangisi söylenebilir?",
+            "options": [
+                "A) Astroloji ile ilgilidir",
+                "C) Ekoloji ile ilgilidir",
+                "E) Biyoloji ile ilgilidir",
+                "B) Astronomi ile ilgilidir",
+                "D) Jeoloji ile ilgilidir"
+            ],
+            "answer": "B"
+        },
+        {
+            "questionIntro": "Maviş ve Yumak isimli kedi dostlarımız, evin etrafında sürekli birlikte dolaşıyorlar.",
+            "questionText": "Yukarıda bahsedilen kedilerin davranışı aşağıdakilerden hangisine örnektir?",
+            "options": [
+                "B) Sosyal canlı olma",
+                "E) Uysal olma",
+                "D) Agresif olma",
+                "A) Bağımsız hareket etme",
+                "C) Yalnız yaşama"
+            ],
+            "answer": "B"
+        },
+        {
+            "questionIntro": "Tarihi bir romanda, kralın savaş alanında yaralandığı anlatılıyor.",
+            "questionText": "Bu tür bir anlatım aşağıdaki edebi türlerden hangisine bir örnektir?",
+            "options": [
+                "D) Deneme",
+                "C) Roman",
+                "E) Biyografi",
+                "B) Öykü",
+                "A) Lirik şiir"
+            ],
+            "answer": "C"
+        },
+        {
+            "questionIntro": "Bilim insanları, uzayda yeni bir gezegen keşfetti.",
+            "questionText": "Bu keşif ile ilgili olarak aşağıdakilerden hangisi söylenebilir?",
+            "options": [
+                "A) Astroloji ile ilgilidir",
+                "C) Ekoloji ile ilgilidir",
+                "E) Biyoloji ile ilgilidir",
+                "B) Astronomi ile ilgilidir",
+                "D) Jeoloji ile ilgilidir"
+            ],
+            "answer": "B"
+        },
+        {
+            "questionIntro": "Maviş ve Yumak isimli kedi dostlarımız, evin etrafında sürekli birlikte dolaşıyorlar.",
+            "questionText": "Yukarıda bahsedilen kedilerin davranışı aşağıdakilerden hangisine örnektir?",
+            "options": [
+                "B) Sosyal canlı olma",
+                "E) Uysal olma",
+                "D) Agresif olma",
+                "A) Bağımsız hareket etme",
+                "C) Yalnız yaşama"
+            ],
+            "answer": "B"
+        },
+        {
+            "questionIntro": "Tarihi bir romanda, kralın savaş alanında yaralandığı anlatılıyor.",
+            "questionText": "Bu tür bir anlatım aşağıdaki edebi türlerden hangisine bir örnektir?",
+            "options": [
+                "D) Deneme",
+                "C) Roman",
+                "E) Biyografi",
+                "B) Öykü",
+                "A) Lirik şiir"
+            ],
+            "answer": "C"
+        },
+        {
+            "questionIntro": "Bilim insanları, uzayda yeni bir gezegen keşfetti.",
+            "questionText": "Bu keşif ile ilgili olarak aşağıdakilerden hangisi söylenebilir?",
+            "options": [
+                "A) Astroloji ile ilgilidir",
+                "C) Ekoloji ile ilgilidir",
+                "E) Biyoloji ile ilgilidir",
+                "B) Astronomi ile ilgilidir",
+                "D) Jeoloji ile ilgilidir"
+            ],
+            "answer": "B"
+        }
+    ]
+}
