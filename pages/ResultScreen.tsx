@@ -54,14 +54,15 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    padding: 20,
+    width: '90%',
+    alignSelf: 'center',
   },
   headerText: {
     fontFamily: 'Nunito-Bold',
     fontSize: 20,
     textAlign: 'center',
     color: '#DCF5FF',
-    marginVertical: 20
+    marginTop: 40,
   },
   image: {
     width: 62.22,
@@ -143,7 +144,7 @@ const styles = StyleSheet.create({
   button: {
     width: '100%',
     height: 56,
-    backgroundColor: '#1A85B4',
+    backgroundColor: '#03A9F1',
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
@@ -155,7 +156,7 @@ const styles = StyleSheet.create({
   buttonText: {
     fontFamily: 'Nunito-Bold',
     fontSize: 16,
-    color: '#DCF5FF'
+    color: '#F8FAFC'
   }
 })
 

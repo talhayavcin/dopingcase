@@ -9,7 +9,6 @@ export const QuestionScreen = ({ route, navigation }: { route: any, navigation: 
 
   const questionIndex = route?.params?.questionIndex ?? 0;
   const initialSelectedOptions = route?.params?.selectedOptions ?? {};
-  
   const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(questionIndex);
 
@@ -18,20 +17,26 @@ export const QuestionScreen = ({ route, navigation }: { route: any, navigation: 
   }, [questionIndex]);
 
   const handleOptionPress = useCallback((option: string) => {
-    setSelectedOptions((prevSelectedOptions: any) => ({
-      ...prevSelectedOptions,
-      [currentQuestionIndex]: option,
-    }));
+    setSelectedOptions((prevSelectedOptions: any) => {
+      if (prevSelectedOptions[currentQuestionIndex] === option) {
+        const updatedOptions = { ...prevSelectedOptions };
+        delete updatedOptions[currentQuestionIndex];
+        return updatedOptions;
+      } else {
+        return {
+          ...prevSelectedOptions,
+          [currentQuestionIndex]: option,
+        };
+      }
+    });
   }, [currentQuestionIndex]);
 
-  // Sonraki soruya geçiş
   const handleNext = () => {
     if (currentQuestionIndex < questionsData.data.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
   };
 
-  // Önceki soruya dönüş
   const handlePrevious = () => {
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
@@ -128,7 +133,7 @@ export const QuestionScreen = ({ route, navigation }: { route: any, navigation: 
             </TouchableOpacity>
           </View>
         </View>
-        <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
+        <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView} contentContainerStyle={styles.scrollViewContentContainer}>
           <View style={styles.questionContent}>
             <View style={styles.questionPart}>
               <Text style={styles.questionIntroText}>{currentQuestion.questionIntro}</Text>
@@ -244,6 +249,9 @@ const styles = StyleSheet.create({
   scrollView: {
     width: '95%',
   },
+  scrollViewContentContainer: {
+    paddingBottom: 90,
+  },
   questionContent: {
     width: '100%',
     alignItems: 'center',
@@ -328,7 +336,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: "#1A3855",
-    opacity: 0.9,
+    opacity: 0.95,
   },
   footerButtonLeft: {
     width: '40%',
@@ -336,7 +344,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
-    backgroundColor: "#1A85B4",
+    backgroundColor: "#03A9F1",
     flexDirection: 'row',
   },
   footerButtonRight: {

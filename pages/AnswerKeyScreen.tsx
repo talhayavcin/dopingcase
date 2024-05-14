@@ -1,16 +1,31 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, SafeAreaView, Image } from 'react-native';
+import React, { useState, useCallback } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, SafeAreaView, Image, RefreshControl } from 'react-native';
 import questionsData from "../questionData.json"
+
+type Question = {
+  questionIntro: string;
+  questionText: string;
+  options: string[];
+  answer: string;
+};
 
 export const AnswerKeyScreen = ({ route, navigation }: any) => {
   const { selectedOptions } = route.params;
   const questionCount = questionsData.data.length;
+  const [refreshing, setRefreshing] = useState(false);
 
   const handleQuestionPress = (questionIndex: number) => {
     navigation.navigate('QuestionScreen', { questionIndex, selectedOptions });
   };
 
-  const renderItem = ({ item, index }: { item: string, index: number}) => {
+  const onRefresh = useCallback(() => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 2000);
+  }, []);
+
+  const renderItem = ({ item, index }: { item: Question, index: number}) => {
 
     const selectedOption = selectedOptions[index];
 
@@ -51,6 +66,7 @@ export const AnswerKeyScreen = ({ route, navigation }: any) => {
         keyExtractor={(item, index) => index.toString()}
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
+        refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}
       />
     </SafeAreaView>
   );
@@ -65,7 +81,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
-    width: '90%',
+    width: '95%',
     alignSelf: 'center',
   },
   header: {
@@ -92,12 +108,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#97BDE0',
   },
-  title: {
-    fontSize: 20,
-    color: 'white',
-    fontWeight: 'bold',
-    marginBottom: 20,
-  },
   questionItem: {
     marginBottom: 5,
     padding: 10,
@@ -105,6 +115,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     flexDirection: 'row',
     alignItems: 'center',
+    width: '95%',
+    alignSelf: 'center',
   },
   questionLabel: {
     fontSize: 16,
@@ -125,7 +137,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#6C8EAE',
     borderWidth: 1,
-    marginLeft: 12,
+    marginLeft: 10,
   },
   selectedOption: {
     backgroundColor: '#359ECE',

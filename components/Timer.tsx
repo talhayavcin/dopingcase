@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
   timerText: {
     fontSize: 20,
     color: '#FFF', // Adjust the color according to your theme
-    fontWeight: 'bold',
+    fontFamily: 'Nunito-Bold',
   }
 });
 
