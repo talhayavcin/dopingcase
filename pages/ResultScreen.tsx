@@ -2,7 +2,10 @@ import { View, Text, SafeAreaView, StyleSheet, Image, TouchableOpacity } from 'r
 import React from 'react'
 import { DividerCircleIcon, XCircleIcon, MinusCircleIcon, CheckCircleIcon } from '../assets/icons/icons'
 
-export const ResultScreen = () => {
+export const ResultScreen = ({ route, navigation }: { route: any, navigation: any }) => {
+  const { results } = route.params;
+  const { correct, incorrect, empty, net } = results;
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.content}>
@@ -15,28 +18,28 @@ export const ResultScreen = () => {
             <View style={styles.firstItem}>
               <DividerCircleIcon />
             </View>
-            <Text style={styles.resultNumber}>23 Net</Text>
+            <Text style={styles.resultNumber}>{net} Net</Text>
           </View>
           <View style={styles.resultItem}>
             <View style={styles.secondItem}>
               <CheckCircleIcon />
             </View>
-            <Text style={styles.resultNumber}>24 Doğru</Text>
+            <Text style={styles.resultNumber}>{correct} Doğru</Text>
           </View>
           <View style={styles.resultItem}>
             <View style={styles.thirdItem}>
               <XCircleIcon />
             </View>
-            <Text style={styles.resultNumber}>4 Yanlış</Text>
+            <Text style={styles.resultNumber}>{incorrect} Yanlış</Text>
           </View>
           <View style={styles.resultItem}>
             <View style={styles.fourthItem}>
               <MinusCircleIcon />
             </View>
-            <Text style={styles.resultNumber}>2 Boş</Text>
+            <Text style={styles.resultNumber}>{empty} Boş</Text>
           </View>
         </View>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity activeOpacity={0.8} onPress={() => navigation.navigate('QuestionScreen')} style={styles.button}>
           <Text style={styles.buttonText}>Üniteye Başla</Text>
         </TouchableOpacity>
       </View>
@@ -72,7 +75,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     marginBottom: 20,
-    color: '#DCF5FF'
+    color: '#DCF5FF',
   },
   descriptionText: {
     fontFamily: 'Nunito-Regular',

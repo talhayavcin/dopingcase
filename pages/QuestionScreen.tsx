@@ -1,21 +1,28 @@
 import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity, ScrollView, ActionSheetIOS } from 'react-native'
-import React, {useState} from 'react'
+import React, { useState, useEffect, useMemo, useCallback } from 'react'
 import { BackIcon, DotIcon, BrushIcon, ZoomInIcon, ZoomOutIcon, ChevronLeftIcon } from '../assets/icons/icons'
 import Timer from '../components/Timer'
 import questionsData from '../questionData.json'
 
 
-export const QuestionScreen = ({navigation}: {navigation: any}) => {
-  const [selectedOptions, setSelectedOptions] = useState({});
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+export const QuestionScreen = ({ route, navigation }: { route: any, navigation: any }) => {
 
+  const questionIndex = route?.params?.questionIndex ?? 0;
+  const initialSelectedOptions = route?.params?.selectedOptions ?? {};
+  
+  const [selectedOptions, setSelectedOptions] = useState(initialSelectedOptions);
+  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(questionIndex);
 
-  const handleOptionPress = (option) => {
-    setSelectedOptions({
-      ...selectedOptions,
-      [currentQuestionIndex]: option
-    });
-  };
+  useEffect(() => {
+    setCurrentQuestionIndex(questionIndex);
+  }, [questionIndex]);
+
+  const handleOptionPress = useCallback((option: string) => {
+    setSelectedOptions((prevSelectedOptions: any) => ({
+      ...prevSelectedOptions,
+      [currentQuestionIndex]: option,
+    }));
+  }, [currentQuestionIndex]);
 
   // Sonraki soruya geçiş
   const handleNext = () => {
@@ -31,7 +38,28 @@ export const QuestionScreen = ({navigation}: {navigation: any}) => {
     }
   };
 
-  const currentQuestion = questionsData.data[currentQuestionIndex];
+  const calculateResults = () => {
+    let correct = 0;
+    let incorrect = 0;
+    let empty = 0;
+
+    questionsData.data.forEach((question, index) => {
+      const selectedOption = selectedOptions[index];
+      if (selectedOption) {
+        if (selectedOption.startsWith(question.answer)) {
+          correct++;
+        } else {
+          incorrect++;
+        }
+      } else {
+        empty++;
+      }
+    });
+
+    const net = correct - (incorrect * 0.25);
+
+    return { correct, incorrect, empty, net };
+  };
 
   const showActionSheet = () => {
     ActionSheetIOS.showActionSheetWithOptions(
@@ -42,28 +70,45 @@ export const QuestionScreen = ({navigation}: {navigation: any}) => {
       },
       (buttonIndex) => {
         if (buttonIndex === 2) {
-          navigation.navigate('ResultScreen');
+          const results = calculateResults();
+          navigation.navigate('ResultScreen', { results });
         } else if(buttonIndex === 1) {
-          navigation.navigate('AnswerKeyScreen', {selectedOptions});
+          navigation.navigate('AnswerKeyScreen', { selectedOptions });
         }
       }
     );
   };
 
+  const currentQuestion = questionsData.data[currentQuestionIndex];
+  const totalQuestions = questionsData.data.length;
+  const answeredQuestions = Object.keys(selectedOptions).length;
+  const progress = useMemo(() => {
+    return (answeredQuestions / totalQuestions) * 100;
+  }, [answeredQuestions, totalQuestions]);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerTop}>
-          <TouchableOpacity style={styles.buttonContainer}>
+          <TouchableOpacity activeOpacity={0.8} style={styles.buttonContainer}>
             <BackIcon />
           </TouchableOpacity>
           <Timer initialMinutes={100}/>
-          <TouchableOpacity style={styles.buttonContainer}>
+          <TouchableOpacity activeOpacity={0.8} style={styles.buttonContainer}>
             <DotIcon />
           </TouchableOpacity>
         </View>
         <View style={styles.headerBottom}>
-          <Text style={styles.headerText}>Temel Kavramlar Seviye Belirleme Sınavı</Text>
+          <View style={styles.headerBottomTop}>
+            <Text style={styles.headerText}>Temel Kavramlar Seviye Belirleme Sınavı</Text>
+            <Text style={styles.progressText}>
+              {answeredQuestions}/{totalQuestions}
+            </Text>
+          </View>
+          <View style={styles.progressContainer}>
+            <View style={[styles.progressBar, { width: `${progress}%` }]} />
+          </View>
+          
         </View>
       </View>
       <View style={styles.content}>
@@ -72,48 +117,57 @@ export const QuestionScreen = ({navigation}: {navigation: any}) => {
             <Text style={styles.questionNumberText}>Soru: {currentQuestionIndex + 1}</Text>
           </View>
           <View style={styles.appearanceButtons}>
-            <TouchableOpacity style={styles.buttonContainer}>
+            <TouchableOpacity activeOpacity={0.8} style={styles.buttonContainer}>
               <BrushIcon />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}>
+            <TouchableOpacity activeOpacity={0.8} style={styles.buttonContainer}>
               <ZoomInIcon />
             </TouchableOpacity>
-            <TouchableOpacity style={styles.buttonContainer}>
+            <TouchableOpacity activeOpacity={0.8} style={styles.buttonContainer}>
               <ZoomOutIcon />
             </TouchableOpacity>
           </View>
         </View>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollView}>
           <View style={styles.questionContent}>
             <View style={styles.questionPart}>
               <Text style={styles.questionIntroText}>{currentQuestion.questionIntro}</Text>
               <Text style={styles.questionText}>{currentQuestion.questionText}</Text>
             </View>
-              {currentQuestion.options.map((option, index) => (
+            {currentQuestion.options.map((option, index) => (
               <TouchableOpacity
+                activeOpacity={0.8}
                 key={index}
                 style={[
                   styles.optionButton,
-                  selectedOptions[currentQuestionIndex] === option && styles.optionSelected
-                ]}                
+                  selectedOptions[currentQuestionIndex] === option && styles.optionSelected,
+                ]}
                 onPress={() => handleOptionPress(option)}
               >
-                <Text style={styles.optionText}>{option}</Text>
+                <View style={styles.optionContainer}>
+                  <View style={[
+                    styles.radioButton,
+                    selectedOptions[currentQuestionIndex] === option && styles.radioButtonSelected,
+                  ]}>
+                    {selectedOptions[currentQuestionIndex] === option && <View style={styles.radioButtonInner} />}
+                  </View>
+                  <Text style={styles.optionText}>{option}</Text>
+                </View>
               </TouchableOpacity>
-              ))}
+            ))}
           </View>
         </ScrollView>
         <View style={styles.footer}>
-          <TouchableOpacity onPress={handlePrevious} style={styles.footerButtonLeft}>
+          <TouchableOpacity activeOpacity={0.8} onPress={handlePrevious} style={styles.footerButtonLeft}>
             <ChevronLeftIcon />
             <Text style={styles.footerButtonText}>Önceki Soru</Text>
           </TouchableOpacity>
           {currentQuestionIndex === 14 ? (
-            <TouchableOpacity onPress={showActionSheet} style={styles.footerButtonRight}>
+            <TouchableOpacity activeOpacity={0.8} onPress={showActionSheet} style={styles.footerButtonRight}>
             <Text style={styles.footerButtonText}>Testi Bitir</Text>
           </TouchableOpacity>
           ) : (
-            <TouchableOpacity onPress={handleNext} style={styles.footerButtonLeft}>
+            <TouchableOpacity activeOpacity={0.8} onPress={handleNext} style={styles.footerButtonLeft}>
             <Text style={styles.footerButtonText}>Sonraki Soru</Text>
           </TouchableOpacity>
           )}
@@ -148,13 +202,19 @@ const styles = StyleSheet.create({
   },
   headerText: {
     color: "#DCF5FF",
-    fontSize: 16,
+    fontSize: 13,
     fontFamily: 'Nunito-SemiBold'
   },
   headerBottom: {
     width: '100%',
-    justifyContent: 'flex-start'
+    justifyContent: 'flex-start',
   }, 
+  headerBottomTop: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    width: '100%',
+    marginTop: 10,
+  },
   buttonContainer: {
     width: 40,
     height: 40,
@@ -181,6 +241,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: 4
   },
+  scrollView: {
+    width: '95%',
+  },
   questionContent: {
     width: '100%',
     alignItems: 'center',
@@ -195,7 +258,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#284F74",
   },
   questionPart: {
-    width: '95%',
+    width: '100%',
     marginBottom: 20,
   },
   questionNumberText: {
@@ -226,10 +289,35 @@ const styles = StyleSheet.create({
   optionSelected: {
     backgroundColor: '#3C79AF',
   },
+  optionContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
   optionText: {
-    color: 'white',
+    color: '#BCDCFA',
     fontSize: 16,
-    fontFamily: 'Nunito-Regular' 
+    fontFamily: 'Nunito-Regular', 
+    marginLeft: 5,
+  },
+  radioButton: {
+    width: 24,
+    height: 24,
+    borderRadius: 12,
+    borderWidth: 2,
+    borderColor: '#BCDCFA',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginRight: 10,
+    marginLeft: 10,
+  },
+  radioButtonSelected: {
+    borderColor: '#BCDCFA',
+  },
+  radioButtonInner: {
+    width: 13,
+    height: 13,
+    borderRadius: 6,
+    backgroundColor: '#BCDCFA',
   },
   footer: {
     position: 'absolute',
@@ -240,6 +328,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     backgroundColor: "#1A3855",
+    opacity: 0.9,
   },
   footerButtonLeft: {
     width: '40%',
@@ -262,5 +351,23 @@ const styles = StyleSheet.create({
     color: "#F8FAFC",
     fontSize: 14,
     fontFamily: 'Nunito-Bold',
-  }
+  },
+  progressContainer: {
+    width: '100%',
+    height: 5,
+    backgroundColor: '#e0e0e0',
+    borderRadius: 9,
+    marginTop: 10,
+    marginBottom: 5,
+  },
+  progressBar: {
+    height: 5,
+    backgroundColor: '#F2C44D',
+    borderRadius: 9,
+  },
+  progressText: {
+    color: '#FDD368',
+    fontSize: 13,
+    fontFamily: 'Nunito-Bold',
+  },
 });

@@ -5,181 +5,181 @@
             "questionIntro": "Maviş ve Yumak isimli kedi dostlarımız, evin etrafında sürekli birlikte dolaşıyorlar.",
             "questionText": "Yukarıda bahsedilen kedilerin davranışı aşağıdakilerden hangisine örnektir?",
             "options": [
-                "B) Sosyal canlı olma",
-                "E) Uysal olma",
-                "D) Agresif olma",
-                "A) Bağımsız hareket etme",
-                "C) Yalnız yaşama"
+                "A) Sosyal canlı olma",
+                "B) Uysal olma",
+                "C) Agresif olma",
+                "D) Bağımsız hareket etme",
+                "E) Yalnız yaşama"
             ],
-            "answer": "B"
+            "answer": "A"
         },
         {
             "questionIntro": "Tarihi bir romanda, kralın savaş alanında yaralandığı anlatılıyor.",
             "questionText": "Bu tür bir anlatım aşağıdaki edebi türlerden hangisine bir örnektir?",
             "options": [
-                "D) Deneme",
-                "C) Roman",
-                "E) Biyografi",
-                "B) Öykü",
-                "A) Lirik şiir"
+                "A) Deneme",
+                "B) Roman",
+                "C) Biyografi",
+                "D) Öykü",
+                "E) Lirik şiir"
             ],
-            "answer": "C"
+            "answer": "B"
         },
         {
             "questionIntro": "Bilim insanları, uzayda yeni bir gezegen keşfetti.",
             "questionText": "Bu keşif ile ilgili olarak aşağıdakilerden hangisi söylenebilir?",
             "options": [
                 "A) Astroloji ile ilgilidir",
-                "C) Ekoloji ile ilgilidir",
-                "E) Biyoloji ile ilgilidir",
-                "B) Astronomi ile ilgilidir",
-                "D) Jeoloji ile ilgilidir"
+                "B) Ekoloji ile ilgilidir",
+                "C) Biyoloji ile ilgilidir",
+                "D) Astronomi ile ilgilidir",
+                "E) Jeoloji ile ilgilidir"
             ],
-            "answer": "B"
+            "answer": "D"
         },
         {
-            "questionIntro": "Maviş ve Yumak isimli kedi dostlarımız, evin etrafında sürekli birlikte dolaşıyorlar.",
-            "questionText": "Yukarıda bahsedilen kedilerin davranışı aşağıdakilerden hangisine örnektir?",
+            "questionIntro": "Bir sporcu, düzenli olarak antrenman yapmanın öneminden bahsediyor.",
+            "questionText": "Bu sporcuya göre düzenli antrenman yapmanın faydası aşağıdakilerden hangisi olabilir?",
             "options": [
-                "B) Sosyal canlı olma",
-                "E) Uysal olma",
-                "D) Agresif olma",
-                "A) Bağımsız hareket etme",
-                "C) Yalnız yaşama"
+                "A) Fiziksel sağlığı artırır",
+                "B) Sosyal becerileri geliştirir",
+                "C) İş hayatında başarı getirir",
+                "D) Sanatsal yetenekleri geliştirir",
+                "E) Bilimsel araştırmalara katkıda bulunur"
             ],
-            "answer": "B"
+            "answer": "A"
         },
         {
-            "questionIntro": "Tarihi bir romanda, kralın savaş alanında yaralandığı anlatılıyor.",
-            "questionText": "Bu tür bir anlatım aşağıdaki edebi türlerden hangisine bir örnektir?",
+            "questionIntro": "Bir yazar, yazmanın kendisi için bir terapi yöntemi olduğunu ifade ediyor.",
+            "questionText": "Bu yazar için yazmanın en büyük faydası aşağıdakilerden hangisi olabilir?",
             "options": [
-                "D) Deneme",
-                "C) Roman",
-                "E) Biyografi",
-                "B) Öykü",
-                "A) Lirik şiir"
+                "A) Duygusal rahatlama sağlar",
+                "B) Popülerlik kazandırır",
+                "C) Maddi kazanç getirir",
+                "D) Fiziksel sağlığı korur",
+                "E) Sosyal statüyü artırır"
             ],
-            "answer": "C"
+            "answer": "A"
         },
         {
-            "questionIntro": "Bilim insanları, uzayda yeni bir gezegen keşfetti.",
-            "questionText": "Bu keşif ile ilgili olarak aşağıdakilerden hangisi söylenebilir?",
+            "questionIntro": "Bir bilim insanı, iklim değişikliğinin etkilerini araştırıyor.",
+            "questionText": "İklim değişikliğinin aşağıdaki etkilerinden hangisi bu bilim insanının araştırma konusu olabilir?",
             "options": [
-                "A) Astroloji ile ilgilidir",
-                "C) Ekoloji ile ilgilidir",
-                "E) Biyoloji ile ilgilidir",
-                "B) Astronomi ile ilgilidir",
-                "D) Jeoloji ile ilgilidir"
+                "A) Biyolojik çeşitlilik kaybı",
+                "B) Ekonomik büyüme",
+                "C) Sosyal medya kullanımı",
+                "D) Uzay keşifleri",
+                "E) Teknolojik yenilikler"
             ],
-            "answer": "B"
+            "answer": "A"
         },
         {
-            "questionIntro": "Maviş ve Yumak isimli kedi dostlarımız, evin etrafında sürekli birlikte dolaşıyorlar.",
-            "questionText": "Yukarıda bahsedilen kedilerin davranışı aşağıdakilerden hangisine örnektir?",
+            "questionIntro": "Bir öğrenci, düzenli ders çalışmanın akademik başarısını artırdığını söylüyor.",
+            "questionText": "Bu öğrenciye göre düzenli ders çalışmanın en büyük avantajı aşağıdakilerden hangisidir?",
             "options": [
-                "B) Sosyal canlı olma",
-                "E) Uysal olma",
-                "D) Agresif olma",
-                "A) Bağımsız hareket etme",
-                "C) Yalnız yaşama"
+                "A) Yüksek notlar almak",
+                "B) Spor aktivitelerine katılmak",
+                "C) Sosyal etkinliklerde bulunmak",
+                "D) Sanatla ilgilenmek",
+                "E) Yeni hobiler edinmek"
             ],
-            "answer": "B"
+            "answer": "A"
         },
         {
-            "questionIntro": "Tarihi bir romanda, kralın savaş alanında yaralandığı anlatılıyor.",
-            "questionText": "Bu tür bir anlatım aşağıdaki edebi türlerden hangisine bir örnektir?",
+            "questionIntro": "Bir doktor, sağlıklı beslenmenin öneminden bahsediyor.",
+            "questionText": "Sağlıklı beslenmenin aşağıdaki faydalarından hangisi doktorun vurguladığı bir nokta olabilir?",
             "options": [
-                "D) Deneme",
-                "C) Roman",
-                "E) Biyografi",
-                "B) Öykü",
-                "A) Lirik şiir"
+                "A) Enerji seviyelerini artırmak",
+                "B) Eğitimde başarı sağlamak",
+                "C) Yeni arkadaşlar edinmek",
+                "D) Seyahat etmeyi kolaylaştırmak",
+                "E) Teknolojik gelişmeleri takip etmek"
             ],
-            "answer": "C"
+            "answer": "A"
         },
         {
-            "questionIntro": "Bilim insanları, uzayda yeni bir gezegen keşfetti.",
-            "questionText": "Bu keşif ile ilgili olarak aşağıdakilerden hangisi söylenebilir?",
+            "questionIntro": "Bir müzisyen, müziğin duygusal üzerindeki etkisinden bahsediyor.",
+            "questionText": "Bu müzisyene göre müziğin duygusal etkisi aşağıdakilerden hangisi olabilir?",
             "options": [
-                "A) Astroloji ile ilgilidir",
-                "C) Ekoloji ile ilgilidir",
-                "E) Biyoloji ile ilgilidir",
-                "B) Astronomi ile ilgilidir",
-                "D) Jeoloji ile ilgilidir"
+                "A) Ruh halini iyileştirmek",
+                "B) Fiziksel sağlık",
+                "C) Sosyal etkileşim",
+                "D) Ekonomik kazanç",
+                "E) Bilimsel ilerleme"
             ],
-            "answer": "B"
+            "answer": "A"
         },
         {
-            "questionIntro": "Maviş ve Yumak isimli kedi dostlarımız, evin etrafında sürekli birlikte dolaşıyorlar.",
-            "questionText": "Yukarıda bahsedilen kedilerin davranışı aşağıdakilerden hangisine örnektir?",
+            "questionIntro": "Bir iş adamı, stratejik planlamanın önemini vurguluyor.",
+            "questionText": "Stratejik planlamanın aşağıdaki faydalarından hangisi bu iş adamının belirttiği olabilir?",
             "options": [
-                "B) Sosyal canlı olma",
-                "E) Uysal olma",
-                "D) Agresif olma",
-                "A) Bağımsız hareket etme",
-                "C) Yalnız yaşama"
+                "A) İş başarısını artırmak",
+                "B) Sanat yeteneklerini geliştirmek",
+                "C) Spor becerilerini artırmak",
+                "D) Sosyal ilişkileri geliştirmek",
+                "E) Akademik başarı sağlamak"
             ],
-            "answer": "B"
+            "answer": "A"
         },
         {
-            "questionIntro": "Tarihi bir romanda, kralın savaş alanında yaralandığı anlatılıyor.",
-            "questionText": "Bu tür bir anlatım aşağıdaki edebi türlerden hangisine bir örnektir?",
+            "questionIntro": "Bir filozof, hayatın anlamını sorgulayan düşüncelerini paylaşıyor.",
+            "questionText": "Bu filozofun görüşüne göre hayatın anlamını sorgulamak neyi sağlayabilir?",
             "options": [
-                "D) Deneme",
-                "C) Roman",
-                "E) Biyografi",
-                "B) Öykü",
-                "A) Lirik şiir"
+                "A) Derin düşünmeyi teşvik eder",
+                "B) Fiziksel sağlığı artırır",
+                "C) Ekonomik kazanç getirir",
+                "D) Sosyal statüyü artırır",
+                "E) Sanatsal yetenekleri geliştirir"
             ],
-            "answer": "C"
+            "answer": "A"
         },
         {
-            "questionIntro": "Bilim insanları, uzayda yeni bir gezegen keşfetti.",
-            "questionText": "Bu keşif ile ilgili olarak aşağıdakilerden hangisi söylenebilir?",
+            "questionIntro": "Bir öğretmen, öğrencilere grup çalışmasının faydalarından bahsediyor.",
+            "questionText": "Bu öğretmene göre grup çalışması aşağıdaki faydalardan hangisini sağlar?",
             "options": [
-                "A) Astroloji ile ilgilidir",
-                "C) Ekoloji ile ilgilidir",
-                "E) Biyoloji ile ilgilidir",
-                "B) Astronomi ile ilgilidir",
-                "D) Jeoloji ile ilgilidir"
+                "A) Takım çalışması becerilerini geliştirir",
+                "B) Bireysel çalışma alışkanlıklarını pekiştirir",
+                "C) Öğrencilerin yalnız çalışmasını teşvik eder",
+                "D) Öğrencilerin fiziksel gücünü artırır",
+                "E) Öğrencilerin bağımsız düşünmesini sağlar"
             ],
-            "answer": "B"
+            "answer": "A"
         },
         {
-            "questionIntro": "Maviş ve Yumak isimli kedi dostlarımız, evin etrafında sürekli birlikte dolaşıyorlar.",
-            "questionText": "Yukarıda bahsedilen kedilerin davranışı aşağıdakilerden hangisine örnektir?",
+            "questionIntro": "Bir çevreci, plastik kullanımının zararlarından bahsediyor.",
+            "questionText": "Plastik kullanımının çevreye verdiği zararlardan hangisi bu çevrecinin belirttiği olabilir?",
             "options": [
-                "B) Sosyal canlı olma",
-                "E) Uysal olma",
-                "D) Agresif olma",
-                "A) Bağımsız hareket etme",
-                "C) Yalnız yaşama"
+                "A) Deniz kirliliğine yol açar",
+                "B) Ekonomik büyümeyi teşvik eder",
+                "C) Teknolojik yeniliklere katkı sağlar",
+                "D) Sosyal medya kullanımını artırır",
+                "E) Eğitimde başarıyı artırır"
             ],
-            "answer": "B"
+            "answer": "A"
         },
         {
-            "questionIntro": "Tarihi bir romanda, kralın savaş alanında yaralandığı anlatılıyor.",
-            "questionText": "Bu tür bir anlatım aşağıdaki edebi türlerden hangisine bir örnektir?",
+            "questionIntro": "Bir psikolog, stresle başa çıkma yöntemlerinden bahsediyor.",
+            "questionText": "Stresle başa çıkmak için bu psikologun önerdiği yöntemlerden hangisi olabilir?",
             "options": [
-                "D) Deneme",
-                "C) Roman",
-                "E) Biyografi",
-                "B) Öykü",
-                "A) Lirik şiir"
+                "A) Düzenli egzersiz yapmak",
+                "B) Yoğun iş temposunu sürdürmek",
+                "C) Yalnız vakit geçirmek",
+                "D) Sosyal medyada daha fazla zaman geçirmek",
+                "E) Daha fazla iş yükü almak"
             ],
-            "answer": "C"
+            "answer": "A"
         },
         {
-            "questionIntro": "Bilim insanları, uzayda yeni bir gezegen keşfetti.",
-            "questionText": "Bu keşif ile ilgili olarak aşağıdakilerden hangisi söylenebilir?",
+            "questionIntro": "Bir diyetisyen, su içmenin öneminden bahsediyor.",
+            "questionText": "Bu diyetisyene göre yeterli su içmenin aşağıdaki faydalarından hangisi doğrudur?",
             "options": [
-                "A) Astroloji ile ilgilidir",
-                "C) Ekoloji ile ilgilidir",
-                "E) Biyoloji ile ilgilidir",
-                "B) Astronomi ile ilgilidir",
-                "D) Jeoloji ile ilgilidir"
+                "A) Vücut fonksiyonlarını düzenler",
+                "B) Eğitimde başarı sağlar",
+                "C) Ekonomik kazanç getirir",
+                "D) Sosyal ilişkileri artırır",
+                "E) Sanatsal yetenekleri geliştirir"
             ],
-            "answer": "B"
+            "answer": "A"
         }
     ]
 }

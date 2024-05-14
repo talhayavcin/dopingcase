@@ -4,26 +4,37 @@ import questionsData from "../questionData.json"
 
 export const AnswerKeyScreen = ({ route, navigation }: any) => {
   const { selectedOptions } = route.params;
+  const questionCount = questionsData.data.length;
 
   const handleQuestionPress = (questionIndex: number) => {
-    navigation.navigate('QuestionScreen', { questionIndex });
+    navigation.navigate('QuestionScreen', { questionIndex, selectedOptions });
   };
 
-  const renderItem = ({ item, index }) => (
-    <TouchableOpacity key={index} style={styles.questionItem} onPress={() => handleQuestionPress(index)}>
-      <Text style={styles.questionLabel}>{index + 1}. Soru</Text>
-      <View style={styles.optionsContainer}>
-        {['A', 'B', 'C', 'D', 'E'].map((answerOption) => (
-          <View key={answerOption} style={[
-            styles.optionCircle,
-            selectedOptions[index] === answerOption && styles.selectedOption
-          ]}>
-            <Text style={styles.optionText}>{answerOption}</Text>
-          </View>
-        ))}
-      </View>
-    </TouchableOpacity>
-  );
+  const renderItem = ({ item, index }: { item: string, index: number}) => {
+
+    const selectedOption = selectedOptions[index];
+
+    return (
+      <TouchableOpacity activeOpacity={0.8} key={index} style={styles.questionItem} onPress={() => handleQuestionPress(index)}>
+        <Text style={styles.questionLabel}>{index + 1}. Soru</Text>
+        <View style={styles.optionsContainer}>
+          {['A', 'B', 'C', 'D', 'E'].map((answerOption) => {
+            const isSelected = selectedOption && selectedOption.startsWith(answerOption);
+            return (
+              <View key={answerOption} style={[
+                styles.optionCircle,
+                isSelected && styles.selectedOption
+              ]}>
+                <Text style={[styles.optionText, isSelected && styles.selectedOptionText]}>
+                  {answerOption}
+                </Text>
+              </View>
+            );
+          })}
+        </View>
+      </TouchableOpacity>
+    );
+  };
 
   return (
     <SafeAreaView style={styles.safeAreaContainer}>
@@ -31,7 +42,7 @@ export const AnswerKeyScreen = ({ route, navigation }: any) => {
         <Image source={require('../assets/dersIcon.png')} style={styles.image} />
         <View style={styles.headerTextPart}>
           <Text style={styles.headerText}>Temel Kavramlar</Text>
-          <Text style={styles.headerQuestionNumberText}>15 Soru</Text>
+          <Text style={styles.headerQuestionNumberText}>{questionCount} Soru</Text>
         </View>
       </View>
       <FlatList
@@ -54,12 +65,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentContainer: {
-    padding: 20,
+    width: '90%',
+    alignSelf: 'center',
   },
   header: {
     flexDirection: 'row',
     alignItems: 'center',
     padding: 20,
+    marginTop: 20,
   },
   image: {
     width: 48,
@@ -96,11 +109,13 @@ const styles = StyleSheet.create({
   questionLabel: {
     fontSize: 16,
     color: '#97BDE0',
-    marginBottom: 5,
+    marginBottom: 0,
+    marginLeft: 5,
   },
   optionsContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    marginLeft: 8 
   },
   optionCircle: {
     width: 40,
@@ -110,14 +125,19 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderColor: '#6C8EAE',
     borderWidth: 1,
+    marginLeft: 12,
   },
   selectedOption: {
     backgroundColor: '#359ECE',
+    borderWidth: 0
   },
   optionText: {
     color: '#97BDE0',
     fontSize: 16,
     fontFamily: 'Nunito-Bold',
+  },
+  selectedOptionText: {
+    color: '#ffffff',
   },
 });
 
